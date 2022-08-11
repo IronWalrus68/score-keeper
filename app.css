@@ -28,3 +28,15 @@ body {
     font-size: 10rem;
     padding-right: 10vw;
 }
+
+#btnwrapper {
+    display: flex;
+    position: absolute;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 55vh;
+}
+
+.dropdown {
+    padding-top: 10px;
+}
