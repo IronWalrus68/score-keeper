@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#leftSide {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: blue;
+    width: 50vw;
+}
+
+#rightSide {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+    background-color: red;
+    width: 50vw;
+}
+
+#leftSide p:nth-child(2) {
+    font-size: 10rem;
+    padding-left: 10vw;
+}
+
+#rightSide p:nth-child(2) {
+    font-size: 10rem;
+    padding-right: 10vw;
+}
