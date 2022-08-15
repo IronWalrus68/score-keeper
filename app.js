@@ -30,6 +30,11 @@ function isWin() {
         pointPOne.disabled = true;
         pointPTwo.disabled = true;
         winScore.disabled = true;
+        if (winScore.value <= playerOneScore.innerHTML) {
+            playerOneScore.style.color = 'green'
+        } else {
+            playerTwoScore.style.color = 'green'
+        }
     }
 }
 
@@ -57,33 +62,8 @@ resetBtn.addEventListener('click', () => {
     pointPTwo.disabled = false;
     winScore.disabled = false;
 
+    playerOneScore.style.color = 'black'
+    playerTwoScore.style.color = 'black'
+
     console.log('game reset')
 })
-//wait, why not just add the paramater into the button. so instead of it watching for it, it activates when the funtions is run
-
-
-
-
-
-
-// while (playerOneScore.value == winScore.value || playerTwoScore.value == winScore.value) {
-//     console.log('win');
-// }
-
-//so lets for now make it when we press reset it will console.log the value of the winning score
-//from there we can check to see if it matches the point then set a win condition.
-
-// resetBtn.addEventListener('click', () => {
-//     console.log('winScore.value, playerTwoScore.innerHTML')
-// })
-
-// resetBtn.addEventListener('click', () => {
-// if (winScore.value == playerTwoScore.innerHTML) {
-//     console.log('fire')
-// }
-// })
-
-
-// let winCondition = false;
-// while (winCondition == false) {
-// }
