@@ -22,10 +22,19 @@ const resetBtn = document.querySelector('#resetBtn')
 
 const winScore = document.querySelector('.form-select') //looking for value
 
-//we need the parent elements for score and score. maybe we only need score to win
+
+// win conditon
+function isWin() {
+    if (winScore.value <= playerOneScore.innerHTML || winScore.value <= playerTwoScore.innerHTML) {
+        console.log('game over')
+        pointPOne.disabled = true;
+        pointPTwo.disabled = true;
+        winScore.disabled = true;
+    }
+}
 
 
-
+// add point buttons
 pointPOne.addEventListener('click', () => {
     playerOneScore.innerHTML = Number(playerOneScore.innerHTML) + 1;
     isWin()
@@ -36,14 +45,23 @@ pointPTwo.addEventListener('click', () => {
     isWin()
 })
 
+//reset button
+
+resetBtn.addEventListener('click', () => {
+    playerOneScore.innerHTML = '0'
+    playerTwoScore.innerHTML = '0'
+
+    winScore.value = "Select winning score"
+
+    pointPOne.disabled = false;
+    pointPTwo.disabled = false;
+    winScore.disabled = false;
+
+    console.log('game reset')
+})
 //wait, why not just add the paramater into the button. so instead of it watching for it, it activates when the funtions is run
 
 
-function isWin() {
-    if (winScore.value <= playerOneScore.innerHTML || winScore.value <= playerTwoScore.innerHTML) {
-        console.log('fire')
-    }
-}
 
 
 
